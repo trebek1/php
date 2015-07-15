@@ -1,6 +1,8 @@
 <?php 
 $pageTitle = "Unique T-Shirts Designed by a Frog"; 
-include('inc/header.php'); ?>
+include('inc/header.php');
+include('inc/products.php');
+ ?>
 
 		<div class="section banner">
 
@@ -8,7 +10,7 @@ include('inc/header.php'); ?>
 
 				<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
 				<div class="button">
-					<a href="#">
+					<a href="shirts.php">
 						<h2>Hey, I&rsquo;m Mike!</h2>
 						<p>Check Out My Shirts</p>
 					</a>
@@ -24,26 +26,11 @@ include('inc/header.php'); ?>
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 
 				<ul class="products">
-					<li><a href="#">
-							<img src="img/shirts/shirt-108.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-107.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-106.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-105.jpg">
-							<p>View Details</p>
-						</a>
-					</li>								
+
+					<?php foreach($products as $product_id => $product){
+						echo get_list_view_html($product_id, $product); 
+		 			} 
+		 			?> 							
 				</ul>
 
 			</div>
