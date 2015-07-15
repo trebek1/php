@@ -49,15 +49,20 @@ $pageTitle = "Mike's full Catelog of Shirts";
 $section = "shirts"; 
 include('inc/header.php'); ?> 
 
-<div class = 'section page'>
+<div class = 'section shirts page'>
 
 	<div class = 'wrapper'> 
 
 	<h1> Mike&rsquo;s Full Catelog of Shirts </h1> 
 	
-	<ul>
+	<ul class="products">
 		<?php foreach($products as $product){ ?> 
-		<li> <?php echo $product ?> </li>
+		<li> 
+			<a href="#">
+				<img src= "<?php echo $product["img"]; ?>" alt=" <?php $product["name"]; ?> ">
+				<p> View Details </p>
+			</a>
+		</li>
 		<?php } ?> 
 	</ul>
 
